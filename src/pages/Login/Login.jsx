@@ -9,11 +9,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const { singInUser, googleLogin, githubLogin } = useContext(AuthContext)
+    const { singInUser, googleLogin, githubLogin, setLogin, } = useContext(AuthContext)
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
     } = useForm()
     const onSubmit = (data) => {
@@ -21,6 +20,7 @@ const Login = () => {
         singInUser(email, password)
             .then((user) => {
                 console.log(user);
+                setLogin(true)
                 toast.success('Login Successful!')
             })
             .catch((error) => {
@@ -30,8 +30,6 @@ const Login = () => {
             });
     }
 
-
-    console.log(watch("example"))
     return (
         <section className="w-full h-[80vh]  bg-[#CED4DA]">
             <div className="h-full">
@@ -127,15 +125,9 @@ const Login = () => {
                                 </button>
 
                             </form>
-                            <button onClick={() => {
-                                googleLogin()
-                                
-                            }} className=" btn btn-secondary">google</button>
+                            <button onClick={googleLogin} className=" btn btn-secondary">google</button>
 
-                            <button onClick={() => {
-                                githubLogin()
-                               
-                            }} className=" btn btn-secondary">Github</button>
+                            <button onClick={githubLogin} className=" btn btn-secondary">Github</button>
 
                             <div className="text-center lg:text-left">
                                 <p className="mb-0 mt-2 pt-1 text-sm font-semibold">

@@ -1,9 +1,15 @@
-import { NavLink } from 'react-router-dom'
+import { useContext } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import { AuthContext } from '../../AuthProvider/AuthProvider'
 const Navbar = () => {
+
+    const { userSignOut, user, login } = useContext(AuthContext)
+    console.log(user);
     const NabList = <>
         <NavLink to='/' className=' mr-3'><a>Home</a></NavLink>
         <NavLink to='/login' className=' mr-3'><a>Login</a></NavLink>
     </>
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -23,30 +29,30 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
-                <div className="">
-                    <div className="group relative cursor-pointer py-2">
+                {user && login ? <><a className="btn" onClick={() => userSignOut()}>Logout</a>
+                    <div className="">
+                        <div className="group relative cursor-pointer py-2">
 
-                        <div className="flex items-center justify-between space-x-5 bg-white px-4">
-                            <a className="menu-hover  " onClick="">
-                                <div className="avatar">
-                                    <div className="w-14 rounded-full">
-                                        <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            <div className="flex items-center justify-between space-x-5 bg-white px-4">
+                                <a className="menu-hover  " onClick="">
+                                    <div className="avatar">
+                                        <div className="w-14 rounded-full">
+                                            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
+                            <div
+                                className="invisible absolute z-50 flex w-full flex-col bg-gray-100 py-1 px-4 text-gray-800 shadow-xl group-hover:visible">
+                                <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+                                    Sunday
+                                </a>
+                                <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
+                                    Monday
+                                </a>
+                            </div>
                         </div>
-                        <div
-                            className="invisible absolute z-50 flex w-full flex-col bg-gray-100 py-1 px-4 text-gray-800 shadow-xl group-hover:visible">
-                            <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
-                                Sunday
-                            </a>
-                            <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
-                                Monday
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                    </div></> : <Link to='./login'><button>Login</button></Link>}
             </div>
         </div>
     )
