@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from 'react';
 import auth from '../firebase/FirebaseConfig';
@@ -17,13 +17,23 @@ const providerGithub = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
-    const [login, setLogin] = useState(false)
+
 
     //create user email password
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
+    
+    //User update 
+    const updateUserProfile = (name, image) => {
 
+        return updateProfile(auth.currentUser, {
+            
+            displayName: name,
+            photoURL: image
+
+        })
+    }
     //Login user 
     const singInUser = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
@@ -31,13 +41,11 @@ const AuthProvider = ({ children }) => {
     //google login
     const googleLogin = () => {
         signInWithPopup(auth, provider)
-        setLogin(true)
     }
     //github login 
 
     const githubLogin = () => {
         signInWithPopup(auth, providerGithub)
-        setLogin(true)
     }
     // user find
     useEffect(() => {
@@ -64,8 +72,7 @@ const AuthProvider = ({ children }) => {
         googleLogin,
         githubLogin,
         userSignOut,
-        setLogin,
-        login
+        updateUserProfile
 
     }
     return (

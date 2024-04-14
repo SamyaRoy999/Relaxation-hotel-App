@@ -3,11 +3,11 @@ import { Link, NavLink } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider/AuthProvider'
 const Navbar = () => {
 
-    const { userSignOut, user, login } = useContext(AuthContext)
-    console.log(user);
+    const { userSignOut, user} = useContext(AuthContext)
+
     const NabList = <>
         <NavLink to='/' className=' mr-3'><a>Home</a></NavLink>
-        <NavLink to='/login' className=' mr-3'><a>Login</a></NavLink>
+        <NavLink to='/updateProfile' className=' mr-3'><a>UpdateProfile</a></NavLink>
     </>
 
     return (
@@ -29,7 +29,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user && login ? <><a className="btn" onClick={() => userSignOut()}>Logout</a>
+                {user  ? <><a className="btn" onClick={() => userSignOut()}>Logout</a>
                     <div className="">
                         <div className="group relative cursor-pointer py-2">
 
@@ -37,19 +37,17 @@ const Navbar = () => {
                                 <a className="menu-hover  " onClick="">
                                     <div className="avatar">
                                         <div className="w-14 rounded-full">
-                                            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                            <img src={user.photoURL} />
                                         </div>
                                     </div>
                                 </a>
                             </div>
                             <div
                                 className="invisible absolute z-50 flex w-full flex-col bg-gray-100 py-1 px-4 text-gray-800 shadow-xl group-hover:visible">
-                                <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
-                                    Sunday
+                                <a className="my-2 block border-b  w-full border-gray-100  font-semibold text-gray-500 hover:text-black ">
+                                    {user.displayName}
                                 </a>
-                                <a className="my-2 block border-b border-gray-100 py-1 font-semibold text-gray-500 hover:text-black md:mx-2">
-                                    Monday
-                                </a>
+                               
                             </div>
                         </div>
                     </div></> : <Link to='./login'><button>Login</button></Link>}

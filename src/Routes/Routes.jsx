@@ -4,27 +4,37 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import Error from "../pages/Error/Error";
+import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
+import PrivetedRoute from "../Priveted/PrivetedRoute";
 
 export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Roots />,
-      errorElement: <Error/>,
-      children: [
-        {
-          path: '/',
-          element: <Home/>
-        },
-        {
-          path: '/login',
-          element: <Login/>
-        },
-        {
-          path: '/register',
-          element: <Register/>
-        },
-       
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <Roots />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: '/',
+        element: <Home />
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/updateProfile',
+        element: <PrivetedRoute><UpdateProfile /></PrivetedRoute>
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/register',
+        element: <Register />
+      },
+
+    ]
+  },
+]);
 

@@ -18,34 +18,80 @@ const Banner = () => {
                 rewind={true}
                 navigation={true}
                 modules={[Navigation]}
-                className="mySwiper text-center   "
+                className="mySwiper text-center  "
             >
 
-                <SwiperSlide className=' relative'>
-                    <div className=' absolute bottom-0 text-white'>
-                        <h3>Explore Timberland Estates</h3>
-                        <p className="">Find expansive timberland properties offering sustainable forestry opportunities and natural beauty.</p>
+
+                <SwiperSlide className=' relative '>
+                <div className="absolute inset-0 bg-[#091926] opacity-50"></div>
+                    <div className=' absolute bottom-[25%] text-white'>
+                        <h3 className=' text-6xl font-montserrat font-normal mx-auto container mb-12'>Discover Luxurious Escapes</h3>
+                        <p className="  mx-20 mb-8 text-base font-normal font-poppins">Embark on a journey to extraordinary destinations where luxury meets unparalleled hospitality. Immerse yourself in opulent accommodations, breathtaking landscapes, and unforgettable experiences that redefine indulgence.</p>
+                       
+                        <div className="flex gap-4 justify-center">
+
+                            <a className="px-6 py-2 min-w-[120px] text-center text-white bg-[#4793AF] border border-[#4793AF] rounded active:text-[#4793AF] hover:bg-transparent hover:text-[#4793AF] focus:outline-none focus:ring"
+                               >
+                                Book Now
+                            </a>
+
+                            <a className="px-6 py-2 min-w-[120px] text-center text-white border border-[#4793AF] rounded hover:bg-[#4793AF] hover:text-white active:bg-indigo-500 focus:outline-none focus:ring"
+                              >
+                                Learn More
+                            </a>
+
+                        </div>
                     </div>
                     <div className=''>
-                        <img className='object-cover h-[600px] w-full rounded-xl' src='https://i.ibb.co/NCJ765D/1bg-min.jpg'></img>
+                        <img className='object-cover h-[600px] w-full ' src='https://i.ibb.co/WsWX5sf/pexels-darrell-fraser-2259226.jpg'></img>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className=' relative'>
-                    <div className=' absolute bottom-0 text-white'>
-                        <h3>Discover Serenity in the Woods</h3>
-                        <p className="">Escape to tranquil forested landscapes, ideal for eco-friendly development or private retreats.</p>
+                <SwiperSlide className=' relative '>
+                <div className="absolute inset-0 bg-[#091926] opacity-50"></div>
+                    <div className=' absolute bottom-[25%] text-white'>
+                        <h3 className=' text-6xl font-montserrat font-normal mx-auto container mb-12'>Experience Timeless Elegance</h3>
+                        <p className="  mx-20 mb-8 text-base font-normal font-poppins">Embark on a journey to extraordinary destinations where luxury meets unparalleled hospitality. Immerse yourself in opulent accommodations, breathtaking landscapes, and unforgettable experiences that redefine indulgence.</p>
+                       
+                        <div className="flex gap-4 justify-center">
+
+                            <a className="px-6 py-2 min-w-[120px] text-center text-white bg-[#4793AF] border border-[#4793AF] rounded active:text-[#4793AF] hover:bg-transparent hover:text-[#4793AF] focus:outline-none focus:ring"
+                               >
+                                Book Now
+                            </a>
+
+                            <a className="px-6 py-2 min-w-[120px] text-center text-white border border-[#4793AF] rounded hover:bg-[#4793AF] hover:text-white active:bg-indigo-500 focus:outline-none focus:ring"
+                                >
+                                Learn More
+                            </a>
+
+                        </div>
                     </div>
                     <div className=''>
-                        <img className='object-cover h-[600px] w-full rounded-xl' src='https://i.ibb.co/bXV899P/2bg-min.jpg'></img>
+                        <img className='object-cover h-[600px] w-full ' src='https://i.ibb.co/3f0q9Q5/pexels-boonkong-boonpeng-1134176.jpg'></img>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className=' relative'>
-                    <div className=' absolute bottom-0 text-white'>
-                        <h3>Embrace Nature s Beauty</h3>
-                        <p className="">Discover sprawling forests with diverse ecosystems, perfect for conservation and outdoor recreation.</p>
+                <SwiperSlide className=' relative '>
+                <div className="absolute inset-0 bg-[#091926] opacity-50"></div>
+                    <div className=' absolute bottom-[25%] text-white'>
+                        <h3 className=' text-6xl font-montserrat font-normal mx-auto container mb-12'>Unwind in Ultimate Comfort</h3>
+                        <p className="  mx-20 mb-8 text-base font-normal font-poppins">Escape to secluded retreats where relaxation and rejuvenation await. Immerse yourself in the tranquility of lush landscapes, rejuvenating spa treatments, and unparalleled service that promises an unforgettable getaway.</p>
+                       
+                        <div className="flex gap-4 justify-center">
+
+                            <a className="px-6 py-2 min-w-[120px] text-center text-white bg-[#4793AF] border border-[#4793AF] rounded active:text-[#4793AF] hover:bg-transparent hover:text-[#4793AF] focus:outline-none focus:ring"
+                                >
+                                Book Now
+                            </a>
+
+                            <a className="px-6 py-2 min-w-[120px] text-center text-white border border-[#4793AF] rounded hover:bg-[#4793AF] hover:text-white active:bg-indigo-500 focus:outline-none focus:ring"
+                            >
+                                Learn More
+                            </a>
+
+                        </div>
                     </div>
                     <div className=''>
-                        <img className='object-cover h-[600px] w-full rounded-xl' src='https://i.ibb.co/8br65sR/3bg-min.jpg'></img>
+                        <img className='object-cover h-[600px] w-full ' src='https://i.ibb.co/Tw2spJW/pexels-pixabay-261169.jpg'></img>
                     </div>
                 </SwiperSlide>
             </Swiper>
@@ -54,3 +100,4 @@ const Banner = () => {
 }
 
 export default Banner
+

@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const { singInUser, googleLogin, githubLogin, setLogin, } = useContext(AuthContext)
+    const { singInUser, googleLogin, githubLogin,  } = useContext(AuthContext)
     const {
         register,
         handleSubmit,
@@ -20,13 +20,10 @@ const Login = () => {
         singInUser(email, password)
             .then((user) => {
                 console.log(user);
-                setLogin(true)
                 toast.success('Login Successful!')
             })
-            .catch((error) => {
-                const errorMessage = error.message;
-                console.log(errorMessage);
-                toast.error(errorMessage)
+            .catch(() => {
+                toast.error('The email and password do not match our records. Please try again.')
             });
     }
 
