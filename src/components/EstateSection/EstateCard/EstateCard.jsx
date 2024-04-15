@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 
 const EstateCard = ({ estateData }) => {
-    const { image, estate_title, segment_name, description, price, status, area, location, facilities } = estateData
+    const { id ,image, estate_title, segment_name, description, price, status, area, location, facilities } = estateData
     return (
         <div>
 
@@ -33,9 +34,9 @@ const EstateCard = ({ estateData }) => {
 
                             <span className=" text-[#4793AF] text-sm">{price}</span>
 
-                            <div className="">
+                            <Link to={`./estateDetails/${id}`}>
                                 <button type="button" className="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 flex justify-center items-center gap-3 mb-2">View <FaLongArrowAltRight /></button>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                 </div>

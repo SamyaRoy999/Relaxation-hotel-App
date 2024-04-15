@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import Error from "../pages/Error/Error";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import PrivetedRoute from "../Priveted/PrivetedRoute";
+import EstateDetails from "../pages/EstateDetails/EstateDetails";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register />
+      },
+      {
+        path: `/estateDetails/:id`,
+        element: <PrivetedRoute><EstateDetails/></PrivetedRoute>
       },
 
     ]
