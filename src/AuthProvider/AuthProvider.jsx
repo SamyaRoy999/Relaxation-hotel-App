@@ -40,12 +40,12 @@ const AuthProvider = ({ children }) => {
     }
     //google login
     const googleLogin = () => {
-        signInWithPopup(auth, provider)
+        return signInWithPopup(auth, provider)
     }
     //github login 
 
     const githubLogin = () => {
-        signInWithPopup(auth, providerGithub)
+        return signInWithPopup(auth, providerGithub)
     }
     // user find
     useEffect(() => {

@@ -1,14 +1,17 @@
 import { useContext } from "react"
 import { AuthContext } from "../AuthProvider/AuthProvider"
 import PropTypes from 'prop-types';
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 const PrivetedRoute = ({children}) => {
     const {user} = useContext(AuthContext)
-    if (user) {
-        return children
+    const loction = useLocation()
+    if (!user) {
+        return <Navigate to='/login' state={loction?.pathname || '/'}></Navigate>
     }
-    return <Navigate to="/login"></Navigate>
+    return <div>
+        {children}
+    </div>
 }
 
 export default PrivetedRoute

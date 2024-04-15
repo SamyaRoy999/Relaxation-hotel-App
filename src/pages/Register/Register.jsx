@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 
 import { useForm } from "react-hook-form"
 import { useContext } from "react"
@@ -10,6 +10,10 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const { createUser } = useContext(AuthContext)
 
+    //navigation system
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state || "/"
 
     const {
         register,
@@ -30,6 +34,10 @@ const Register = () => {
                 const user = userCredential.user;
                 console.log(user);
                 toast.success("Registration Successful!")
+
+                if(userCredential.user){
+                    navigate(from)
+                }
             })
             .catch((error) => {
 
@@ -46,7 +54,7 @@ const Register = () => {
                 <ToastContainer />
                 <div
                     className="flex h-full flex-wrap  justify-center flex-1">
-                     <div
+                    <div
                         className="shrink-1 mb-12 relative  grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
                         <div className="absolute inset-0 bg-black opacity-50"></div>
                         <div className=" absolute top-[50%] text-center right-[20%] text-white ">
