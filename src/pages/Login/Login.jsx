@@ -9,7 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
-    const { singInUser, googleLogin, githubLogin,  } = useContext(AuthContext)
+    const { singInUser, googleLogin, githubLogin, } = useContext(AuthContext)
     const {
         register,
         handleSubmit,
@@ -28,28 +28,31 @@ const Login = () => {
     }
 
     return (
-        <section className="w-full h-[80vh]  bg-[#CED4DA]">
+        <section className="w-full h-[90vh]">
             <div className="h-full">
                 <ToastContainer />
                 <div
-                    className="flex h-full flex-wrap  justify-center lg:justify-between">
+                    className="flex h-full  flex-wrap justify-center flex-1">
                     <div
                         className="shrink-1 mb-12 relative  grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
-                        <div className="absolute inset-0 bg-green-800  opacity-50"></div>
-
+                        <div className="absolute inset-0 bg-black opacity-50"></div>
+                        <div className=" absolute top-[50%] text-center right-[20%] text-white ">
+                            <h3 className=" text-6xl font-bold font-poppins mb-5">Welcome</h3>
+                            <p className="text-xl "> to our Luxe Resort Hub! Dive into <br /> opulent escapes.</p>
+                        </div>
                         <img
-                            src="https://i.ibb.co/WtmF8wb/pexels-photo-1423600.jpg"
-                            className="w-full h-[80vh]"
+                            src="https://i.ibb.co/hDVHVJv/luxury-3115234-1280.jpg"
+                            className="w-full h-[90vh]"
                             alt="Sample image" />
                     </div>
 
-                    <div className="mb-12 md:mb-0 flex items-center md:w-8/12 lg:w-5/12 xl:w-5/12">
-                        <div>
+                    <div className="mb-12 md:mb-0 flex justify-center items-center flex-1 ">
+                        <div >
 
-                            <form onSubmit={handleSubmit(onSubmit)}>
+                            <form onSubmit={handleSubmit(onSubmit)} className="mb-5 ">
                                 <div
                                     className="flex flex-row items-center justify-center lg:justify-start">
-                                    <p className="mb-0 me-4 text-lg">Sign in with</p>
+                                    <p className="mb-0 me-4 text-2xl font-poppins text-gray-600 font-bold">Sign in with</p>
                                 </div>
                                 <div
                                     className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300 dark:before:border-neutral-500 dark:after:border-neutral-500">
@@ -60,7 +63,7 @@ const Login = () => {
                                 </div>
 
 
-                                <div className="relative mb-4 h-11 w-full min-w-[200px]">
+                                <div className="relative mb-4 h-11 w-full min-w-[350px]">
                                     <input placeholder="email"
                                         type="email"
                                         name="email"
@@ -76,7 +79,7 @@ const Login = () => {
                                     </label>
                                 </div>
 
-                                <div className="relative mb-4  h-11 w-full min-w-[200px]">
+                                <div className="relative mb-4  h-11 w-full min-w-[350px]">
                                     <input placeholder="password"
 
                                         type="password"
@@ -92,41 +95,37 @@ const Login = () => {
                                     </label>
                                 </div>
 
-                                <div className="mb-6 flex items-center justify-between">
-
-                                    <div className="mb-[0.125rem] block min-h-[1.5rem] ps-[1.5rem]">
-                                        <input
-                                            className="relative float-left -ms-[1.5rem] me-[6px] mt-[0.15rem] h-[1.125rem] w-[1.125rem] appearance-none rounded-[0.25rem] border-[0.125rem] border-solid border-secondary-500 outline-none before:pointer-events-none before:absolute before:h-[0.875rem] before:w-[0.875rem] before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-checkbox before:shadow-transparent before:content-[''] checked:border-primary checked:bg-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:-mt-px checked:after:ms-[0.25rem] checked:after:block checked:after:h-[0.8125rem] checked:after:w-[0.375rem] checked:after:rotate-45 checked:after:border-[0.125rem] checked:after:border-l-0 checked:after:border-t-0 checked:after:border-solid checked:after:border-white checked:after:bg-transparent checked:after:content-[''] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-black/60 focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-black/60 focus:before:transition-[box-shadow_0.2s,transform_0.2s] focus:after:absolute focus:after:z-[1] focus:after:block focus:after:h-[0.875rem] focus:after:w-[0.875rem] focus:after:rounded-[0.125rem] focus:after:content-[''] checked:focus:before:scale-100 checked:focus:before:shadow-checkbox checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:after:-mt-px checked:focus:after:ms-[0.25rem] checked:focus:after:h-[0.8125rem] checked:focus:after:w-[0.375rem] checked:focus:after:rotate-45 checked:focus:after:rounded-none checked:focus:after:border-[0.125rem] checked:focus:after:border-l-0 checked:focus:after:border-t-0 checked:focus:after:border-solid checked:focus:after:border-white checked:focus:after:bg-transparent rtl:float-right dark:border-neutral-400 dark:checked:border-primary dark:checked:bg-primary"
-                                            type="checkbox"
-                                            value=""
-                                            id="exampleCheck2" />
-                                        <label
-                                            className="inline-block ps-[0.15rem] hover:cursor-pointer"
-                                        // for="exampleCheck2"
-                                        >
-                                            Remember me
-                                        </label>
-                                    </div>
-
-
-                                    <a href="#!">Forgot password?</a>
-                                </div>
-
 
                                 <button
                                     type="submit"
-                                    className="inline-block w-full rounded bg-primary px-7 pb-2 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                                    className="inline-block w-full rounded bg-[#4793AF] mb-5 px-7 pb-2 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
                                     data-twe-ripple-init
                                     data-twe-ripple-color="light">
                                     Login
                                 </button>
 
                             </form>
-                            <button onClick={googleLogin} className=" btn btn-secondary">google</button>
+                            <div className="flex flex-col max-w-sm gap-5">
 
-                            <button onClick={githubLogin} className=" btn btn-secondary">Github</button>
+                                <button onClick={googleLogin} type="button" className="py-2 px-4 flex justify-center items-center  bg-[#b2bfc3] font-bold hover:bg-gray-700 hover:text-white focus:ring-red-500 focus:ring-offset-red-200 text-gray-600 w-full transition ease-in duration-200 text-center text-base  shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                    <svg width="20" height="20" fill="currentColor" className="mr-2" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M896 786h725q12 67 12 128 0 217-91 387.5t-259.5 266.5-386.5 96q-157 0-299-60.5t-245-163.5-163.5-245-60.5-299 60.5-299 163.5-245 245-163.5 299-60.5q300 0 515 201l-209 201q-123-119-306-119-129 0-238.5 65t-173.5 176.5-64 243.5 64 243.5 173.5 176.5 238.5 65q87 0 160-24t120-60 82-82 51.5-87 22.5-78h-436v-264z">
+                                        </path>
+                                    </svg>
+                                    Sign in with Google
+                                </button>
 
-                            <div className="text-center lg:text-left">
+                                <button onClick={githubLogin} type="button" className="py-2 px-4 flex justify-center items-center  bg-gray-600 hover:bg-[#b2bfc3] hover:text-gray-600 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="mr-2" viewBox="0 0 1792 1792">
+                                        <path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z">
+                                        </path>
+                                    </svg>
+                                    Sign in with GitHub
+                                </button>
+
+                            </div>
+
+                            <div className="text-center ">
                                 <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
                                     Do not have an account
                                     <Link to='/register' className="text-danger p-2 transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700">
@@ -142,4 +141,14 @@ const Login = () => {
 }
 
 export default Login
-{/* <a href="https://ibb.co/ySH5v1w"><img src="https://i.ibb.co/WtmF8wb/pexels-photo-1423600.jpg" alt="pexels-photo-1423600" border="0"></a><br /><a target='_blank' href='https://freeonlinedice.com/'>roll dice online</a><br /> */ }
+
+
+{/* <a href="https://ibb.co/VQmsXmw"><img src="https://i.ibb.co/YyZxvZ0/pexels-suhel-vba-3659683.jpg" alt="pexels-suhel-vba-3659683" border="0"></a>
+https://i.ibb.co/S03N5rr/pexels-jean-van-der-meulen-1457842.jpg" alt="pexels-jean-van-der-meulen-1457842" border="0"></>
+https://i.ibb.co/mqbfk4g/pexels-pixabay-210265.jpg" alt="pexels-pixabay-210265" border="0"></https:>
+https://i.ibb.co/vh17QK6/pexels-pixabay-164595.jpg" alt="pexels-pixabay-164595" border="0"></https:>
+https://i.ibb.co/8xGD48d/pexels-pixabay-262048.jpg" alt="pexels-pixabay-262048" border="0"></https:>
+https://i.ibb.co/Ny7vvWy/pexels-vecislavas-popa-1743231.jpg" alt="pexels-vecislavas-popa-1743231" border="0"></https:>
+https://i.ibb.co/RDd1m0j/pexels-vecislavas-popa-1743229.jpg" alt="pexels-vecislavas-popa-1743229" border="0"></https:>
+https://i.ibb.co/TbPFBkq/pexels-hakim-santoso-3634741.jpg" alt="pexels-hakim-santoso-3634741" border="0"></https:>
+https://i.ibb.co/D5DBRBh/pexels-pixabay-210604.jpg" alt="pexels-pixabay-210604" border="0"></https:> */}

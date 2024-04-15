@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "image": "resort1.jpg",
+        "image": "https://i.ibb.co/YyZxvZ0/pexels-suhel-vba-3659683.jpg",
         "estate_title": "Serenity Cove",
         "segment_name": "Luxury Resorts",
         "description": "Escape to a paradise of luxury at Serenity Cove, where every moment is a breathtaking experience.",
@@ -18,7 +18,7 @@
     },
     {
         "id": 2,
-        "image": "resort2.jpg",
+        "image": "https://i.ibb.co/S03N5rr/pexels-jean-van-der-meulen-1457842.jpg",
         "estate_title": "Villa del Mar",
         "segment_name": "Luxury Resorts",
         "description": "Indulge in the ultimate luxury experience at Villa del Mar, where sophistication meets relaxation.",
@@ -35,7 +35,7 @@
     },
     {
         "id": 3,
-        "image": "resort3.jpg",
+        "image": "https://i.ibb.co/mqbfk4g/pexels-pixabay-210265.jpg",
         "estate_title": "Azure Haven",
         "segment_name": "Luxury Resorts",
         "description": "Experience the epitome of luxury at Azure Haven, where elegance and extravagance converge.",
@@ -52,7 +52,7 @@
     },
     {
         "id": 4,
-        "image": "resort4.jpg",
+        "image": "https://i.ibb.co/vh17QK6/pexels-pixabay-164595.jpg",
         "estate_title": "Diamond Sands",
         "segment_name": "Luxury Resorts",
         "description": "Discover unparalleled luxury at Diamond Sands, where every aspect of your stay is tailored to perfection.",
@@ -69,7 +69,7 @@
     },
     {
         "id": 5,
-        "image": "resort5.jpg",
+        "image": "https://i.ibb.co/8xGD48d/pexels-pixabay-262048.jpg",
         "estate_title": "Royal Retreat",
         "segment_name": "Luxury Resorts",
         "description": "Experience royal treatment at Royal Retreat, where luxury and opulence await at every turn.",
@@ -86,7 +86,7 @@
     },
     {
         "id": 6,
-        "image": "resort6.jpg",
+        "image": "https://i.ibb.co/Ny7vvWy/pexels-vecislavas-popa-1743231.jpg",
         "estate_title": "Golden Sands",
         "segment_name": "Luxury Resorts",
         "description": "Bask in the golden glory of Golden Sands, where luxury meets serenity amidst breathtaking natural beauty.",
@@ -103,7 +103,7 @@
     },
     {
         "id": 7,
-        "image": "resort7.jpg",
+        "image": "https://i.ibb.co/RDd1m0j/pexels-vecislavas-popa-1743229.jpg",
         "estate_title": "Elysian Escape",
         "segment_name": "Luxury Resorts",
         "description": "Embark on an Elysian Escape, where luxury and tranquility blend seamlessly to create an unforgettable experience.",
@@ -120,7 +120,7 @@
     },
     {
         "id": 8,
-        "image": "resort8.jpg",
+        "image": "https://i.ibb.co/TbPFBkq/pexels-hakim-santoso-3634741.jpg",
         "estate_title": "Platinum Paradise",
         "segment_name": "Luxury Resorts",
         "description": "Experience the epitome of luxury at Platinum Paradise, where every aspect of your stay is crafted to perfection.",
@@ -137,7 +137,7 @@
     },
     {
         "id": 9,
-        "image": "resort9.jpg",
+        "image": "https://i.ibb.co/D5DBRBh/pexels-pixabay-210604.jpg",
         "estate_title": "Oceanic Oasis",
         "segment_name": "Luxury Resorts",
         "description": "Discover an Oceanic Oasis where luxury and tranquility converge to create a truly unforgettable escape.",
