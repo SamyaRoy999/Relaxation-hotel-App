@@ -4,9 +4,10 @@ import { AuthContext } from '../../AuthProvider/AuthProvider'
 import { CiLogin } from "react-icons/ci";
 import { FiLogOut } from "react-icons/fi";
 
+
 const Navbar = () => {
 
-    const { userSignOut, user} = useContext(AuthContext)
+    const { userSignOut, user } = useContext(AuthContext)
 
     const NabList = <>
         <NavLink to='/' className=' mr-3 text-base font-montserrat '><a>Home</a></NavLink>
@@ -14,7 +15,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar bg-base-100 mx-auto container">
+        <div className="navbar bg-base-100 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -24,7 +25,12 @@ const Navbar = () => {
                         {NabList}
                     </ul>
                 </div>
-                <a className="text-3xl font-bold font-montserrat">Relaxa<span className=' text-[#4793AF]'>tion</span></a>
+                <div className='flex items-center'>
+                    <div className='w-20'>
+                        <img src="https://i.ibb.co/tYShWGR/depositphotos-183079166-stock-illustration-hotel-tourism-holiday-summer-beach.webp" alt="" />
+                    </div>
+                    <a className="text-3xl font-bold font-montserrat flex items-center"> Relaxa<span className=' text-[#4793AF]'>tion</span></a>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -32,7 +38,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user  ? <><a className="flex gap-1 items-center font-bold text-lg font-montserrat  btn btn-outline btn-info " onClick={() => userSignOut()}> <FiLogOut className='text-xl'/> Logout</a>
+                {user ? <><a className="flex gap-1 items-center font-bold text-lg font-montserrat  btn btn-outline btn-info " onClick={() => userSignOut()}> <FiLogOut className='text-xl' /> Logout</a>
                     <div className="">
                         <div className="group relative cursor-pointer py-2">
 
@@ -50,13 +56,15 @@ const Navbar = () => {
                                 <a className="my-2 block border-b  w-full border-gray-100  font-semibold text-gray-500 hover:text-black ">
                                     {user.displayName}
                                 </a>
-                               
+
                             </div>
                         </div>
-                    </div></> : <Link to='./login'><button className='flex gap-1 items-center font-bold text-lg font-montserrat  btn btn-outline btn-info '><CiLogin className='text-xl'/> Login</button></Link>}
+                    </div></> : <Link to='./login'><button className='flex gap-1 items-center font-bold text-lg font-montserrat  btn btn-outline btn-info '><CiLogin className='text-xl' /> Login</button></Link>}
             </div>
         </div>
     )
 }
 
 export default Navbar
+
+{/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/tYShWGR/depositphotos-183079166-stock-illustration-hotel-tourism-holiday-summer-beach.webp"  */ }
