@@ -10,9 +10,9 @@ const Navbar = () => {
     const { userSignOut, user, Name, photo,} = useContext(AuthContext)
 
     const NabList = <>
-        <NavLink to='/' className=' mr-3 text-base font-montserrat '><a>Home</a></NavLink>
-        <NavLink to='/updateProfile' className='  mr-3 text-base font-montserrat'><a>UpdateProfile</a></NavLink>
-        <NavLink to='/travel' className='  mr-3 text-base font-montserrat'><a>TravelTips</a></NavLink>
+        <NavLink to='/' className=' mr-3 text-sm font-montserrat '><a>Home</a></NavLink>
+        <NavLink to='/updateProfile' className='  mr-3 text-sm font-montserrat'><a>UpdateProfile</a></NavLink>
+        <NavLink to='/travel' className='  mr-3 text-sm font-montserrat'><a>TravelTips</a></NavLink>
     </>
 
     return (

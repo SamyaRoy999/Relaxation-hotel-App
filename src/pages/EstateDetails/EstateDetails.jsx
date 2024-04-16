@@ -4,6 +4,7 @@ import { FaChartArea } from "react-icons/fa6";
 import { GrStatusGood } from "react-icons/gr";
 import { CiLocationOn } from "react-icons/ci";
 import { HiMiniCurrencyDollar } from "react-icons/hi2";
+import { Helmet } from "react-helmet-async";
 
 const EstateDetails = () => {
 
@@ -21,6 +22,10 @@ const EstateDetails = () => {
     console.log(datials);
     return (
         <>
+
+            <Helmet>
+                <title> Relaxation | LUXURY-RETREATS-DETAILS</title>
+            </Helmet>
             {datials && (
                 //  const {id, image, estate_title, segment_name, description, price, status, area, location, facilities} = estateData
                 <div
@@ -29,9 +34,9 @@ const EstateDetails = () => {
                         <img className="object-cover object-top w-full" src={datials.image} alt='Mountain' />
                     </div>
                     <div className=" mt-2 mx-32">
-                    <div className=" py-8">
-                        <span className=" px-6  text-white bg-gray-900 p-2 rounded-lg ">{datials.segment_name}</span>
-                    </div>
+                        <div className=" py-8">
+                            <span className=" px-6  text-white bg-gray-900 p-2 rounded-lg ">{datials.segment_name}</span>
+                        </div>
                         <h2 className=" text-5xl py-3 lg:py-7 font-bold">{datials.estate_title}</h2>
                         <p className="text-[#606060] text-lg pb-3 lg:pb-6 ">{datials.description}</p>
 
@@ -50,13 +55,13 @@ const EstateDetails = () => {
 
                         </ul>
                         <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Area :</h2>
-                        <p  className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"><FaChartArea/> {datials.area}</p>
+                        <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"><FaChartArea /> {datials.area}</p>
                         <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Price :</h2>
-                        <p  className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"><HiMiniCurrencyDollar/>  {datials.price}</p>
+                        <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"><HiMiniCurrencyDollar />  {datials.price}</p>
                         <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Status :</h2>
-                        <p  className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"><GrStatusGood/> {datials.status}</p>
+                        <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"><GrStatusGood /> {datials.status}</p>
                         <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">location :</h2>
-                        <p  className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"> <CiLocationOn/>{datials.location}</p>
+                        <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"> <CiLocationOn />{datials.location}</p>
 
                     </div>
 

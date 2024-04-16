@@ -8,6 +8,7 @@ import { AuthContext } from "../../AuthProvider/AuthProvider"
 
 // import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
     const { updateUserProfile, user } = useContext(AuthContext)
@@ -17,7 +18,7 @@ const UpdateProfile = () => {
         formState: { errors },
     } = useForm()
     const onSubmit = (data) => {
-        const {email, name, photoUrl } = data
+        const { email, name, photoUrl } = data
         updateUserProfile(name, photoUrl)
         console.log(data);
         console.log(user);
@@ -25,7 +26,9 @@ const UpdateProfile = () => {
 
     return (
         <div className=" w-80">
-
+            <Helmet>
+                <title> Relaxation | UPDATEPROFILE</title>
+            </Helmet>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div
                     className="flex flex-row items-center justify-center lg:justify-start">

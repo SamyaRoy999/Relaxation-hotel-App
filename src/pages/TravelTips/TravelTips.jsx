@@ -1,23 +1,26 @@
+import { Helmet } from "react-helmet-async"
 
 
 const TravelTips = () => {
     return (
         <div
             className="w-full container font-poppins  mx-4  sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto  bg-white shadow-xl rounded-lg text-gray-900">
-
+            <Helmet>
+                <title> Relaxation | TRAVELTIPS</title>
+            </Helmet>
             <div className=' relative '>
                 <div className="absolute inset-0 bg-[#091926] opacity-50"></div>
                 <div className=' absolute bottom-[25%] text-white'>
-                    <h3 className=' text-6xl font-montserrat mx-20 font-normal  container mb-12'>Luxury Travel Hacks:  <br /> Enhancing Your Travel Experience</h3>
+                    <h3 className=' text-6xl font-montserrat mx-16 font-normal  container mb-12'>Luxury Travel Hacks:  <br /> Enhancing Your Travel <br /> Experience</h3>
 
                 </div>
                 <div className=''>
                     <img className='object-cover h-[600px] w-full ' src='https://i.ibb.co/Lt2V0nW/neom-e-OWabm-CNEdg-unsplash.jpg'></img>
                 </div>
             </div>
-           
+
             <div className=" mt-2 mx-32">
-                
+
                 <h2 className=" text-5xl py-3 lg:py-7 font-bold"></h2>
                 <p className="text-[#606060] text-lg pb-3 lg:pb-6 "></p>
 
@@ -31,12 +34,12 @@ const TravelTips = () => {
                 <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3">Whether it’s a private helicopter tour over a tropical island or a champagne toast atop the Eiffel Tower, luxury travel is all about unique and exclusive experiences.</p>
                 <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Impeccable Service</h2>
                 <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3">Expect unparalleled service throughout your journey. Luxury travelers are pampered with attention to detail and a dedicated concierge at their disposal.</p>
-               
+
                 <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">Choosing Your Luxury Destination</h2>
                 <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3">The world is filled with enticing destinations for luxury travelers. Here are some top picks:</p>
                 <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">The Maldives — Paradise on Earth</h2>
                 <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3">The Maldives is a haven for luxury travelers. With its overwater bungalows, crystal-clear waters, and vibrant coral reefs, it’s the epitome of tropical luxury.</p>
-                
+
                 <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Paris — The City of RomanceParis — The City of Romance</h2>
                 <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3">The Maldives is a haven for luxury travelers. With its overwater bungalows, crystal-clear waters, and vibrant coral reefs, it’s the epitome of tropical luxury.</p>
                 <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Santorini — The Greek Gem</h2>

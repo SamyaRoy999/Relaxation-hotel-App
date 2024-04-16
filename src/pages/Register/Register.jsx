@@ -1,15 +1,20 @@
 import { Link, useLocation, useNavigate } from "react-router-dom"
 
 import { useForm } from "react-hook-form"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { AuthContext } from "../../AuthProvider/AuthProvider"
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
+
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
     const { createUser, setName, setPhoto } = useContext(AuthContext)
-    
+
+    const [passwordIcon, setPasswordIcon] = useState(false)
     //navigation system
     const navigate = useNavigate()
     const location = useLocation()
@@ -32,11 +37,12 @@ const Register = () => {
 
         createUser(email, password)
             .then((userCredential) => {
+
                 const user = userCredential.user;
                 console.log(user);
                 toast.success("Registration Successful!")
 
-                if(userCredential.user){
+                if (userCredential.user) {
                     navigate(from)
                 }
             })
@@ -51,6 +57,9 @@ const Register = () => {
 
     return (
         <section className="w-full h-[90vh] ">
+            <Helmet>
+                <title> Relaxation | REGISTER</title>
+            </Helmet>
             <div className="h-full">
                 <ToastContainer />
                 <div
@@ -131,16 +140,18 @@ const Register = () => {
                                 </label>
                             </div>
 
-                            <div className="relative mb-4  h-11 w-full min-w-[200px]">
+                            <div className=" mb-4 relative   h-11 w-full min-w-[200px]">
                                 <input placeholder="Password"
 
-                                    type="password"
+                                    type= {passwordIcon?"text": "password"}
                                     name="password"
                                     className="peer h-full  w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100"
                                     {...register("password", { required: true })}
                                 />
                                 {errors.password && <span className=" text-red-400">This field is required</span>}
-
+                                <div onClick={()=> setPasswordIcon(!passwordIcon)} className=" absolute right-0 top-4">
+                                    {passwordIcon ?<FaEye />: <FaEyeSlash/>}
+                                </div>
                                 <label
                                     className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
                                     password

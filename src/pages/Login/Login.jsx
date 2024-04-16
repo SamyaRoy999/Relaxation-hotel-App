@@ -7,15 +7,16 @@ import { AuthContext } from "../../AuthProvider/AuthProvider"
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const { singInUser, googleLogin, githubLogin, } = useContext(AuthContext)
-    
+
     //navigation system
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state || "/"
-    
+
     const {
         register,
         handleSubmit,
@@ -27,7 +28,7 @@ const Login = () => {
             .then((user) => {
                 console.log(user);
                 toast.success('Login Successful!')
-                if(user.user){
+                if (user.user) {
                     navigate(from)
                 }
 
@@ -40,18 +41,21 @@ const Login = () => {
 
 
     const hendelSocialLogin = socialLogin => {
-         socialLogin()
-         .then(result =>{
-            if(result.user){
-                navigate(from)
-            }
-         })
+        socialLogin()
+            .then(result => {
+                if (result.user) {
+                    navigate(from)
+                }
+            })
 
-     
+
 
     }
     return (
         <section className="w-full h-[90vh]">
+            <Helmet>
+                <title> Relaxation | LOGIN</title>
+            </Helmet>
             <div className="h-full">
                 <ToastContainer />
                 <div
