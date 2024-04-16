@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "image": "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).jpg",
+      "name": "Emily S.",
+      "job" : "Web Developer",
+      "message": "An unforgettable experience! The attention to detail and personalized service at these luxury resorts is unmatched. Can't wait to plan my next getaway!"
+    },
+    {
+      "id": 2,
+      "image": "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).jpg",
+      "name": "Michael R.",
+      "job" : "Graphic Designer",
+      "message": "Absolutely breathtaking! From the stunning views to the impeccable hospitality, every moment spent at these resorts feels like a dream come true."
+    },
+    {
+      "id": 3,
+      "image": "https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).jpg",
+      "name": "Sarah M.",
+      "job" : "Marketing Specialist",
+      "message": "A sanctuary of luxury and tranquility! These resorts provide the perfect escape from the hustle and bustle of everyday life. Truly a paradise worth experiencing."
+    }
+]

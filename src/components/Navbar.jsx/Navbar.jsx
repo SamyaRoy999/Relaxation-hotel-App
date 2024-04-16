@@ -1,17 +1,20 @@
 import { useContext } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider/AuthProvider'
+import { CiLogin } from "react-icons/ci";
+import { FiLogOut } from "react-icons/fi";
+
 const Navbar = () => {
 
     const { userSignOut, user} = useContext(AuthContext)
 
     const NabList = <>
-        <NavLink to='/' className=' mr-3'><a>Home</a></NavLink>
-        <NavLink to='/updateProfile' className=' mr-3'><a>UpdateProfile</a></NavLink>
+        <NavLink to='/' className=' mr-3 text-base font-montserrat '><a>Home</a></NavLink>
+        <NavLink to='/updateProfile' className='  mr-3 text-base font-montserrat'><a>UpdateProfile</a></NavLink>
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 mx-auto container">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -21,7 +24,7 @@ const Navbar = () => {
                         {NabList}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+                <a className="text-3xl font-bold font-montserrat">Relaxa<span className=' text-[#4793AF]'>tion</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -29,7 +32,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user  ? <><a className="btn" onClick={() => userSignOut()}>Logout</a>
+                {user  ? <><a className="flex gap-1 items-center font-bold text-lg font-montserrat  btn btn-outline btn-info " onClick={() => userSignOut()}> <FiLogOut className='text-xl'/> Logout</a>
                     <div className="">
                         <div className="group relative cursor-pointer py-2">
 
@@ -50,7 +53,7 @@ const Navbar = () => {
                                
                             </div>
                         </div>
-                    </div></> : <Link to='./login'><button>Login</button></Link>}
+                    </div></> : <Link to='./login'><button className='flex gap-1 items-center font-bold text-lg font-montserrat  btn btn-outline btn-info '><CiLogin className='text-xl'/> Login</button></Link>}
             </div>
         </div>
     )

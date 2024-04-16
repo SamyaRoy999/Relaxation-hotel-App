@@ -3,9 +3,13 @@ import { AuthContext } from "../AuthProvider/AuthProvider"
 import PropTypes from 'prop-types';
 import { Navigate, useLocation } from "react-router-dom";
 
-const PrivetedRoute = ({children}) => {
-    const {user} = useContext(AuthContext)
+const PrivetedRoute = ({ children }) => {
+    const { user, loding } = useContext(AuthContext)
     const loction = useLocation()
+    if (loding) {
+        return <span className="loading loading-dots loading-lg">Lodding</span>
+    }
+
     if (!user) {
         return <Navigate to='/login' state={loction?.pathname || '/'}></Navigate>
     }
@@ -18,4 +22,4 @@ export default PrivetedRoute
 
 PrivetedRoute.propTypes = {
     children: PropTypes.any
-  };
+};
