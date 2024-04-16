@@ -7,11 +7,12 @@ import { FiLogOut } from "react-icons/fi";
 
 const Navbar = () => {
 
-    const { userSignOut, user } = useContext(AuthContext)
+    const { userSignOut, user, Name, photo,} = useContext(AuthContext)
 
     const NabList = <>
         <NavLink to='/' className=' mr-3 text-base font-montserrat '><a>Home</a></NavLink>
         <NavLink to='/updateProfile' className='  mr-3 text-base font-montserrat'><a>UpdateProfile</a></NavLink>
+        <NavLink to='/travel' className='  mr-3 text-base font-montserrat'><a>TravelTips</a></NavLink>
     </>
 
     return (
@@ -46,7 +47,8 @@ const Navbar = () => {
                                 <a className="menu-hover  " onClick="">
                                     <div className="avatar">
                                         <div className="w-14 rounded-full">
-                                            <img src={user.photoURL} />
+                                          
+                                            <img src={user.photoURL || photo} />
                                         </div>
                                     </div>
                                 </a>
@@ -54,7 +56,7 @@ const Navbar = () => {
                             <div
                                 className="invisible absolute z-50 flex w-full flex-col bg-gray-100 py-1 px-4 text-gray-800 shadow-xl group-hover:visible">
                                 <a className="my-2 block border-b  w-full border-gray-100  font-semibold text-gray-500 hover:text-black ">
-                                    {user.displayName}
+                                    {user.displayName || Name}
                                 </a>
 
                             </div>

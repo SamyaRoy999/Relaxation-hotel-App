@@ -19,6 +19,9 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
     const [loding, setLoding] = useState(true)
 
+    const [Name, setName] = useState([])
+    const [photo, setPhoto] = useState([])
+
     //create user email password
     const createUser = (email, password) => {
         setLoding(true)
@@ -29,7 +32,7 @@ const AuthProvider = ({ children }) => {
     const updateUserProfile = (name, image) => {
 
         return updateProfile(auth.currentUser, {
-            
+
             displayName: name,
             photoURL: image
 
@@ -53,20 +56,23 @@ const AuthProvider = ({ children }) => {
     }
     // user find
     useEffect(() => {
-        const unSuvscrive =  onAuthStateChanged(auth, (user) => {
+        const unSuvscrive = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user)
-                setLoding(false)
+
             }
-        }); return ()=> unSuvscrive() 
+            setLoding(false)
+        }); return () => unSuvscrive()
     }, [])
 
 
     console.log(user);
     // sign out 
     const userSignOut = () => {
-        setUser(null)
+
         signOut(auth)
+        setLoding(false)
+        setUser(null)
     }
 
 
@@ -78,9 +84,15 @@ const AuthProvider = ({ children }) => {
         googleLogin,
         githubLogin,
         userSignOut,
-        updateUserProfile
+        updateUserProfile,
+        setName,
+        setPhoto,
+        Name,
+        photo,
+
 
     }
+
     return (
         <AuthContext.Provider value={allValues}>
             {children}

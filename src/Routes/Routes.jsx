@@ -7,6 +7,7 @@ import Error from "../pages/Error/Error";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import PrivetedRoute from "../Priveted/PrivetedRoute";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
+import TravelTips from "../pages/TravelTips/TravelTips";
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/updateProfile',
-        element: <PrivetedRoute><UpdateProfile /></PrivetedRoute>
+        element: <PrivetedRoute> <UpdateProfile /> </PrivetedRoute>
       },
       {
         path: '/login',
@@ -35,8 +36,12 @@ export const router = createBrowserRouter([
         element: <Register />
       },
       {
+        path: '/travel',
+        element: <PrivetedRoute> <TravelTips /> </PrivetedRoute>
+      },
+      {
         path: `/estateDetails/:id`,
-        element: <PrivetedRoute><EstateDetails/></PrivetedRoute>
+        element: <PrivetedRoute> <EstateDetails /> </PrivetedRoute>
       },
 
     ]

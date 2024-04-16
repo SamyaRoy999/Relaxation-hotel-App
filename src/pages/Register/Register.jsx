@@ -8,8 +8,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
-
+    const { createUser, setName, setPhoto } = useContext(AuthContext)
+    
     //navigation system
     const navigate = useNavigate()
     const location = useLocation()
@@ -22,8 +22,9 @@ const Register = () => {
     } = useForm()
 
     const onSubmit = (data) => {
-        const { email, password } = data
-
+        const { email, password, photoUrl, name } = data
+        setName(name)
+        setPhoto(photoUrl)
         if (!/(?=.*[a-z])(?=.*[A-Z]).{6,}/.test(password)) {
             toast.error('Password must have at least 6 characters, including uppercase and lowercase letters.')
             return;
@@ -156,7 +157,7 @@ const Register = () => {
                             <div className="text-center ">
                                 <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
                                     Already have an account
-                                    <Link to='/login' className="text-danger p-2 transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700">
+                                    <Link to='/login' className="text-danger text-[#4793AF] p-2 transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700">
                                         Login here</Link>
                                 </p>
                             </div>
