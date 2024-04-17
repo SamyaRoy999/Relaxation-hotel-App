@@ -1,17 +1,22 @@
 
-// import React, { useRef, useState } from 'react';
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'animate.css';
-// Import Swiper styles
+
+
 import 'swiper/css';
 import 'swiper/css/navigation';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-// import './styles.css';
 
-// import required modules
 import { Navigation } from 'swiper/modules';
+import { useEffect } from 'react';
 const Banner = () => {
+    // import AOS from 'aos';
+    // import 'aos/dist/aos.css';
+    useEffect(() => {
+        AOS.init({duration:1000});
+    }, [])
+    
     return (
         <>
             <Swiper
@@ -25,10 +30,10 @@ const Banner = () => {
                 <SwiperSlide className=' relative  '>
                 <div className="absolute inset-0 bg-[#091926] opacity-50"></div>
                     <div className=' absolute bottom-[25%] text-white'>
-                        <h3 className=' text-4xl md:text-5xl lg:text-6xl font-montserrat font-normal mx-auto container mb-6 lg:mb-12'>Discover Luxurious Escapes</h3>
-                        <p className="  mx-10 md:mx-16 lg:mx-20 mb-8 text-base font-normal font-poppins">Embark on a journey to extraordinary destinations where luxury meets unparalleled hospitality. Immerse yourself in opulent accommodations, breathtaking landscapes, and unforgettable experiences that redefine indulgence.</p>
+                        <h3 className=' text-4xl md:text-5xl lg:text-6xl font-montserrat font-normal mx-auto container mb-6 lg:mb-12'  data-aos="fade-up">Discover Luxurious Escapes</h3>
+                        <p className="  mx-10 md:mx-16 lg:mx-20 mb-8 text-base font-normal font-poppins"  data-aos="fade-up">Embark on a journey to extraordinary destinations where luxury meets unparalleled hospitality. Immerse yourself in opulent accommodations, breathtaking landscapes, and unforgettable experiences that redefine indulgence.</p>
                        
-                        <div className="flex gap-4 justify-center">
+                        <div className="flex gap-4 justify-center "  data-aos="fade-up">
 
                             <a className="px-6 py-2 min-w-[120px] text-center text-white bg-[#4793AF] border border-[#4793AF] rounded active:text-[#4793AF] hover:bg-transparent hover:text-[#4793AF] focus:outline-none focus:ring"
                                >
@@ -49,10 +54,10 @@ const Banner = () => {
                 <SwiperSlide className=' relative '>
                 <div className="absolute inset-0 bg-[#091926] opacity-50"></div>
                     <div className=' absolute bottom-[25%] text-white'>
-                        <h3 className='text-4xl md:text-5xl lg:text-6xl font-montserrat font-normal mx-auto container mb-6 lg:mb-12'>Experience Timeless Elegance</h3>
-                        <p className=" mx-10 md:mx-16 lg:mx-20 mb-8 text-base font-normal font-poppins">Embark on a journey to extraordinary destinations where luxury meets unparalleled hospitality. Immerse yourself in opulent accommodations, breathtaking landscapes, and unforgettable experiences that redefine indulgence.</p>
+                        <h3 className='text-4xl md:text-5xl lg:text-6xl font-montserrat font-normal mx-auto container mb-6 lg:mb-12' data-aos="fade-up">Experience Timeless Elegance</h3>
+                        <p className=" mx-10 md:mx-16 lg:mx-20 mb-8 text-base font-normal font-poppins" data-aos="fade-up">Embark on a journey to extraordinary destinations where luxury meets unparalleled hospitality. Immerse yourself in opulent accommodations, breathtaking landscapes, and unforgettable experiences that redefine indulgence.</p>
                        
-                        <div className="flex gap-4 justify-center">
+                        <div className="flex gap-4 justify-center" data-aos="fade-up">
 
                             <a className="px-6 py-2 min-w-[120px] text-center text-white bg-[#4793AF] border border-[#4793AF] rounded active:text-[#4793AF] hover:bg-transparent hover:text-[#4793AF] focus:outline-none focus:ring"
                                >
@@ -73,10 +78,10 @@ const Banner = () => {
                 <SwiperSlide className=' relative '>
                 <div className="absolute inset-0 bg-[#091926] opacity-50"></div>
                     <div className=' absolute bottom-[25%] text-white'>
-                        <h3 className=' text-4xl md:text-5xl lg:text-6xl font-montserrat font-normal mx-auto container mb-6 lg:mb-12'>Unwind in Ultimate Comfort</h3>
-                        <p className="  mx-10 md:mx-16 lg:mx-20 mb-8 text-base font-normal font-poppins">Escape to secluded retreats where relaxation and rejuvenation await. Immerse yourself in the tranquility of lush landscapes, rejuvenating spa treatments, and unparalleled service that promises an unforgettable getaway.</p>
+                        <h3 className=' text-4xl md:text-5xl lg:text-6xl font-montserrat font-normal mx-auto container mb-6 lg:mb-12' data-aos="fade-up">Unwind in Ultimate Comfort</h3>
+                        <p className="  mx-10 md:mx-16 lg:mx-20 mb-8 text-base font-normal font-poppins" data-aos="fade-up">Escape to secluded retreats where relaxation and rejuvenation await. Immerse yourself in the tranquility of lush landscapes, rejuvenating spa treatments, and unparalleled service that promises an unforgettable getaway.</p>
                        
-                        <div className="flex gap-4 justify-center">
+                        <div className="flex gap-4 justify-center" data-aos="fade-up">
 
                             <a className="px-6 py-2 min-w-[120px] text-center text-white bg-[#4793AF] border border-[#4793AF] rounded active:text-[#4793AF] hover:bg-transparent hover:text-[#4793AF] focus:outline-none focus:ring"
                                 >

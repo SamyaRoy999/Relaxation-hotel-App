@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Helmet } from "react-helmet-async";
 
 const PrivateEvents = () => {
     const [eventsData, setEventsData] = useState([]);
@@ -10,20 +12,25 @@ const PrivateEvents = () => {
             .then(response => response.json())
             .then(data => setEventsData(data))
             .catch(error => console.error('Error fetching events data:', error));
+        AOS.init({ duration: 1000 });
     }, []);
+
 
     return (
         <div className=" container mx-auto font-montserrat">
-            <h1 className="mb-4 text-center text-4xl py-8 font-bold text-gray-900 dark:text-white">Host Unforgettable Events: Luxury Venues for Every Occasion</h1>
+            <Helmet>
+                <title> Relaxation | PRIVATE-EVENTS</title>
+            </Helmet>
+            <h1 className="mb-4 text-center mx-8 text-4xl py-8 font-bold text-gray-900 dark:text-white" data-aos="fade-up">Host Unforgettable Events: Luxury Venues for Every Occasion</h1>
             {eventsData.map(event => (
                 <div key={event.id}>
                     <div className="flex justify-center">
-                        <img src={event.image} alt={event.venue_name} />
+                        <img data-aos="fade-up" src={event.image} alt={event.venue_name} />
                     </div>
-                    <h2 className="mb-4 py-5 text-center text-xl font-bold text-gray-900 dark:text-white">{event.venue_name}</h2>
-                    <p className=" pl-4 lg:px-36 text-center text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3">{event.description}</p>
+                    <h2 data-aos="fade-right" className="mb-4 py-5 text-center text-xl font-bold text-gray-900 dark:text-white">{event.venue_name}</h2>
+                    <p data-aos="fade-right" className=" pl-4 lg:px-36 text-center text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3">{event.description}</p>
 
-                    <ul className="max-w-md pb-7 mx-auto  text-center space-y-1 pl-4 text-gray-500 list-inside dark:text-gray-400">
+                    <ul data-aos="fade-right" className="max-w-md pb-7 mx-auto  text-center space-y-1 pl-4 text-gray-500 list-inside dark:text-gray-400">
                         {event.amenities.map((item, index) => (
 
                             <li className="flex items-center" key={index}>

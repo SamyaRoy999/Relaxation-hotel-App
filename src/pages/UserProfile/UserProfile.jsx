@@ -1,14 +1,19 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { AuthContext } from "../../AuthProvider/AuthProvider"
 import { Helmet } from "react-helmet-async";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const UserProfile = () => {
     const { user } = useContext(AuthContext)
     console.log("bangla ", user);
+     
+    useEffect(() => {
+        AOS.init({duration:1000});
+    }, [])
 
     return (
-        <div className="min-h-screen font-poppins dark:bg-slate-800 gap-6 flex items-center justify-center">
+        <div data-aos="fade-up" className="min-h-screen font-poppins dark:bg-slate-800 gap-6 flex items-center justify-center">
             <Helmet>
                 <title> Relaxation | USERP-PROFILE</title>
             </Helmet>

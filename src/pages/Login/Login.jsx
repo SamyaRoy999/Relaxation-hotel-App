@@ -1,9 +1,10 @@
 import { Link, useLocation, useNavigate } from "react-router-dom"
 
 import { useForm } from "react-hook-form"
-import { useContext,  } from "react"
+import { useContext, useEffect, } from "react"
 import { AuthContext } from "../../AuthProvider/AuthProvider"
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -26,10 +27,10 @@ const Login = () => {
         const { email, password } = data
         singInUser(email, password)
             .then((user) => {
-                
+
                 if (user.user) {
                     toast.success('Login Successful!')
-                    setTimeout(() => {    
+                    setTimeout(() => {
                         navigate(from)
                     }, 2000);
                 }
@@ -56,6 +57,10 @@ const Login = () => {
 
 
     }
+
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, [])
     return (
         <section className="w-full lg:h-screen">
             <Helmet>
@@ -66,11 +71,12 @@ const Login = () => {
                 <div
                     className="flex  flex-wrap justify-center flex-1">
                     <div
+                         data-aos="fade-right"
                         className="shrink-1 mb-12 relative  grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
                         <div className="absolute inset-0 bg-black opacity-50"></div>
                         <div className=" absolute top-[40%] text-center right-[15%] md:right-[20%] lg:right-[20%] text-white ">
-                            <h3 className=" text-6xl font-bold font-poppins mb-5">Welcome</h3>
-                            <p className="text-xl "> to our Luxe Resort Hub! Dive into <br /> opulent escapes.</p>
+                            <h3  data-aos="fade-up" className=" text-6xl font-bold font-poppins mb-5">Welcome</h3>
+                            <p  data-aos="fade-up" className="text-xl "> to our Luxe Resort Hub! Dive into <br /> opulent escapes.</p>
                         </div>
                         <img
                             src="https://i.ibb.co/hDVHVJv/luxury-3115234-1280.jpg"
@@ -78,7 +84,7 @@ const Login = () => {
                             alt="Sample image" />
                     </div>
 
-                    <div className="mb-12 md:mb-0 flex justify-center items-center flex-1 ">
+                    <div data-aos="fade-left" className="mb-12 md:mb-0 flex justify-center items-center flex-1 ">
                         <div >
 
                             <form onSubmit={handleSubmit(onSubmit)} className="mb-5 ">

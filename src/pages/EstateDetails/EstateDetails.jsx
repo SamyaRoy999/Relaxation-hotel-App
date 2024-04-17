@@ -5,6 +5,8 @@ import { GrStatusGood } from "react-icons/gr";
 import { CiLocationOn } from "react-icons/ci";
 import { HiMiniCurrencyDollar } from "react-icons/hi2";
 import { Helmet } from "react-helmet-async";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const EstateDetails = () => {
 
@@ -16,7 +18,9 @@ const EstateDetails = () => {
         fetch("/data.json")
             .then(res => res.json())
             .then(data => setEstateDatials(data))
+            AOS.init({duration:1000});
     }, [])
+
 
     const datials = estateDatials.find((item) => item.id == parseInt(id))
     console.log(datials);
@@ -29,7 +33,7 @@ const EstateDetails = () => {
             {datials && (
               
                 <div
-                    className="w-full container font-poppins  mx-4  sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto  bg-white shadow-xl rounded-lg text-gray-900">
+                    className="w-full container font-poppins  mx-4  sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto  bg-white shadow-xl rounded-lg text-gray-900" data-aos="fade-up">
                     <div className="rounded-t-lg md:h-[400px]  lg:h-[400px] overflow-hidden">
                         <img className="object-cover object-top w-full" src={datials.image} alt='Mountain' />
                     </div>
@@ -37,11 +41,11 @@ const EstateDetails = () => {
                         <div className=" py-8">
                             <span className=" px-6  text-white bg-gray-900 p-2 rounded-lg ">{datials.segment_name}</span>
                         </div>
-                        <h2 className=" text-5xl py-3 lg:py-7 font-bold">{datials.estate_title}</h2>
-                        <p className="text-[#606060] text-lg pb-3 lg:pb-6 ">{datials.description}</p>
+                        <h2 className=" text-5xl py-3 lg:py-7 font-bold" data-aos="fade-left">{datials.estate_title}</h2>
+                        <p className="text-[#606060] text-lg pb-3 lg:pb-6 " data-aos="right">{datials.description}</p>
 
-                        <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Facilities :</h2>
-                        <ul className="max-w-md pb-7 space-y-1 pl-4 text-gray-500 list-inside dark:text-gray-400">
+                        <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white" data-aos="fade-up">Facilities :</h2>
+                        <ul data-aos="fade-up" className="max-w-md pb-7 space-y-1 pl-4 text-gray-500 list-inside dark:text-gray-400">
                             {datials.facilities.map((item, index) => (
 
                                 <li className="flex items-center" key={index}>
@@ -54,14 +58,14 @@ const EstateDetails = () => {
                             ))}
 
                         </ul>
-                        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Area :</h2>
-                        <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"><FaChartArea /> {datials.area}</p>
-                        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Price :</h2>
-                        <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"><HiMiniCurrencyDollar />  {datials.price}</p>
-                        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Status :</h2>
-                        <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"><GrStatusGood /> {datials.status}</p>
-                        <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">location :</h2>
-                        <p className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"> <CiLocationOn />{datials.location}</p>
+                        <h2 data-aos="fade-up"  className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Area :</h2>
+                        <p data-aos="fade-left"  className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"><FaChartArea /> {datials.area}</p>
+                        <h2 data-aos="fade-up"  className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Price :</h2>
+                        <p data-aos="fade-left"  className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"><HiMiniCurrencyDollar />  {datials.price}</p>
+                        <h2 data-aos="fade-up"  className="mb-4 text-xl font-bold text-gray-900 dark:text-white">Status :</h2>
+                        <p data-aos="fade-left"  className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"><GrStatusGood /> {datials.status}</p>
+                        <h2  data-aos="fade-up" className="mb-4 text-xl font-bold text-gray-900 dark:text-white">location :</h2>
+                        <p  data-aos="fade-left" className=" pl-4 text-[#606060] text-lg pb-3 lg:pb-6 flex items-center gap-3"> <CiLocationOn />{datials.location}</p>
 
                     </div>
 

@@ -2,11 +2,12 @@
 
 import { useForm } from "react-hook-form"
 
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { AuthContext } from "../../AuthProvider/AuthProvider"
 
+  import AOS from 'aos';
+    import 'aos/dist/aos.css';
 
-// import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet-async";
 import { useNavigate } from "react-router-dom";
@@ -21,17 +22,21 @@ const UpdateProfile = () => {
     } = useForm()
     const nevigate = useNavigate()
     const onSubmit = (data) => {
-        const {  name, photoUrl } = data
+        const { name, photoUrl } = data
         updateUserProfile(name, photoUrl)
-        .then(()=>{
-            
-            nevigate('/')
-        })
-        
+            .then(() => {
+
+                nevigate('/')
+            })
+
     }
+  
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, [])
 
     return (
-        <div className=" w-80 mx-auto container my-24">
+        <div className=" w-80 mx-auto container my-24"  data-aos="fade-up">
             <Helmet>
                 <title> Relaxation | UPDATEPROFILE</title>
             </Helmet>
@@ -61,7 +66,7 @@ const UpdateProfile = () => {
 
                     <label
                         className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-                          {user.displayName}
+                        {user.displayName}
                     </label>
                 </div>
 
@@ -93,7 +98,7 @@ const UpdateProfile = () => {
 
                     <label
                         className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-                         {user.photoURL}
+                        {user.photoURL}
                     </label>
                 </div>
 
@@ -102,9 +107,9 @@ const UpdateProfile = () => {
                     className="inline-block w-full rounded bg-[#4793AF] px-7 pb-2 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
                     data-twe-ripple-init
                     data-twe-ripple-color="light">
-                     Save
+                    Save
                 </button>
-               
+
             </form>
         </div>
     )

@@ -1,13 +1,14 @@
 import { Link, useLocation, useNavigate } from "react-router-dom"
 
 import { useForm } from "react-hook-form"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../../AuthProvider/AuthProvider"
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet-async";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
@@ -16,7 +17,7 @@ const Register = () => {
 
     const [passwordIcon, setPasswordIcon] = useState(false)
     //navigation system
-    
+
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state || "/"
@@ -56,7 +57,9 @@ const Register = () => {
             });
 
     }
-
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, [])
     return (
         <section className="w-full lg:h-screen ">
             <Helmet>
@@ -64,8 +67,9 @@ const Register = () => {
             </Helmet>
             <div className="lg:h-screen">
                 <ToastContainer />
-                <div
-                    className="flex lg:h-screen flex-wrap  justify-center flex-1">
+                <div 
+                 data-aos="fade-right"
+                    className="flex  flex-wrap justify-center flex-1">
                     <div
                         className="shrink-1 mb-12 relative  grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
                         <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -79,7 +83,7 @@ const Register = () => {
                             alt="Sample image" />
                     </div>
 
-                    <div className="mb-12 md:mb-0 flex items-center justify-center flex-1">
+                    <div data-aos="fade-left" className="mb-12 md:mb-0 flex items-center justify-center flex-1">
                         <form onSubmit={handleSubmit(onSubmit)}>
                             <div
                                 className="flex flex-row items-center justify-center lg:justify-start">

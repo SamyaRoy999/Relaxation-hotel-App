@@ -1,16 +1,22 @@
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const EstateCard = ({ estateData }) => {
-    const { id ,image, estate_title,  description, price,  location,  } = estateData
+    const { id, image, estate_title, description, price, location, } = estateData
+
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, [])
     return (
         <div>
 
             <div
-                className="flex  inset-0 z-50 outline-none focus:outline-none pb-10">
+                data-aos="fade-up" className="flex   inset-0 z-50 outline-none focus:outline-none pb-10">
                 <div className="block rounded-lg bg-white w-72 ">
                     <div className="relative overflow-hidden bg-cover bg-no-repeat" data-te-ripple-init data-te-ripple-color="light">
                         <img className="rounded-lg  sm:m-h-64 md:h-64 w-full" src={image}
@@ -20,7 +26,7 @@ const EstateCard = ({ estateData }) => {
                         </div>
                         <div className=" absolute bottom-0 rounded-lg bg-black opacity-70 p-1">
                             <div className=' flex gap-2 items-center font-bold text-[#78b7cd]'>
-                                <FaLocationDot className=' font-extrabold font-poppins'/>
+                                <FaLocationDot className=' font-extrabold font-poppins' />
                                 <p className=' text-sm'>{location}</p>
                             </div>
                         </div>

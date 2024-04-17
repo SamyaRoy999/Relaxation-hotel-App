@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Testimonials = () => {
     const [tastimonail, setTastimonail] = useState([])
@@ -7,13 +8,15 @@ const Testimonials = () => {
         fetch('/Testimonials.json')
             .then(res => res.json())
             .then(data => setTastimonail(data))
+        AOS.init({ duration: 1000 });
     }, [])
+
 
     return (
         <div>
 
             <div className="container my-24 mx-auto md:px-6">
-                <section className="mb-32 text-center">
+                <section className="mb-32 text-center"  data-aos="fade-right">
                     <h2 className="mb-12 text-3xl font-bold">Testimonials</h2>
 
                     <div className="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
