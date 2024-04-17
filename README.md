@@ -17,7 +17,7 @@ Welcome to our Luxury Resorts Website template. This template is designed to hel
 - Testimonials: Showcase testimonials from satisfied guests to build trust and credibility.
 
 ## Live Site:
-[Visit our Luxury Resorts Website](https://real-estate-auth-d3bafweb.app/)
+[Visit our Luxury Resorts Website](https://real-estate-auth-d3baf.web.app)
 
 ##  npm Package:
 - Used ` react-router-dom` .
