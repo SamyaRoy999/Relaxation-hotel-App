@@ -2,7 +2,7 @@
 // import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-
+import 'animate.css';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -25,7 +25,7 @@ const Banner = () => {
                 <SwiperSlide className=' relative  '>
                 <div className="absolute inset-0 bg-[#091926] opacity-50"></div>
                     <div className=' absolute bottom-[25%] text-white'>
-                        <h3 className='text-4xl md:text-5xl lg:text-6xl font-montserrat font-normal mx-auto container mb-6 lg:mb-12'>Discover Luxurious Escapes</h3>
+                        <h3 className=' text-4xl md:text-5xl lg:text-6xl font-montserrat font-normal mx-auto container mb-6 lg:mb-12'>Discover Luxurious Escapes</h3>
                         <p className="  mx-10 md:mx-16 lg:mx-20 mb-8 text-base font-normal font-poppins">Embark on a journey to extraordinary destinations where luxury meets unparalleled hospitality. Immerse yourself in opulent accommodations, breathtaking landscapes, and unforgettable experiences that redefine indulgence.</p>
                        
                         <div className="flex gap-4 justify-center">

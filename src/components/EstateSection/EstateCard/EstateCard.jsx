@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 const EstateCard = ({ estateData }) => {
-    const { id ,image, estate_title, segment_name, description, price, status, area, location, facilities } = estateData
+    const { id ,image, estate_title,  description, price,  location,  } = estateData
     return (
         <div>
 

@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "resort_id": 101,
+      "event_type": "Wedding",
+      "venue_name": "Grand Ballroom",
+      "capacity": 300,
+      "amenities": ["Audiovisual Equipment", "Catering Services", "Event Planning Assistance"],
+      "description": "Our exquisite Grand Ballroom offers a stunning backdrop for your dream wedding. With a capacity of 300 guests, state-of-the-art audiovisual equipment, and expert event planning assistance, your special day will be unforgettable.",
+      "image": "https://i.ibb.co/QfyB8dD/luxurious-dinner-hall-with-large-crystal-chandelier.jpg"
+    },
+    {
+      "id": 2,
+      "resort_id": 102,
+      "event_type": "Corporate Retreat",
+      "venue_name": "Executive Boardroom",
+      "capacity": 50,
+      "amenities": ["High-Speed Internet", "Catering Services", "Business Center"],
+      "description": "Host your next corporate retreat in style at our Executive Boardroom. With seating for up to 50 guests, high-speed internet access, and full-service catering options, it's the perfect setting for productive meetings and team-building activities.",
+      "image": "https://i.ibb.co/H2NL6Vq/2151054277.jpg"
+    },
+    {
+      "id": 3,
+      "resort_id": 103,
+      "event_type": "Family Reunion",
+      "venue_name": "Private Villa",
+      "capacity": 20,
+      "amenities": ["Private Pool", "Outdoor Dining Area", "Personal Chef"],
+      "description": "Gather your loved ones for a memorable family reunion in our luxurious Private Villa. With spacious accommodations for up to 20 guests, a private pool, outdoor dining area, and personal chef services, it's the perfect setting for quality time together.",
+      "image": "https://i.ibb.co/2vvbwmj/florian-schmidinger-b-79n-Oqf95-I-unsplash.jpg"
+    }
+  ]

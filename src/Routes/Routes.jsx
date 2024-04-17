@@ -9,6 +9,7 @@ import PrivetedRoute from "../Priveted/PrivetedRoute";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import TravelTips from "../pages/TravelTips/TravelTips";
 import UserProfile from "../pages/UserProfile/UserProfile";
+import PrivateEvents from "../pages/PrivateEvents/PrivateEvents";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
       {
         path: '/travel',
         element: <PrivetedRoute> <TravelTips /> </PrivetedRoute>
+      },
+      {
+        path: '/privateEvents',
+        element: <PrivetedRoute> <PrivateEvents/> </PrivetedRoute>
       },
       {
         path: `/estateDetails/:id`,
