@@ -9,6 +9,8 @@ import { AuthContext } from "../../AuthProvider/AuthProvider"
 // import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
+
 
 const UpdateProfile = () => {
     const { updateUserProfile, user } = useContext(AuthContext)
@@ -17,22 +19,26 @@ const UpdateProfile = () => {
         handleSubmit,
         formState: { errors },
     } = useForm()
+    const nevigate = useNavigate()
     const onSubmit = (data) => {
-        const { email, name, photoUrl } = data
+        const {  name, photoUrl } = data
         updateUserProfile(name, photoUrl)
-        console.log(data);
-        console.log(user);
+        .then(()=>{
+            
+            nevigate('/')
+        })
+        
     }
 
     return (
-        <div className=" w-80">
+        <div className=" w-80 mx-auto container my-24">
             <Helmet>
                 <title> Relaxation | UPDATEPROFILE</title>
             </Helmet>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div
                     className="flex flex-row items-center justify-center lg:justify-start">
-                    <p className="mb-0 me-4 text-lg">Sign in with</p>
+                    <p className="mb-0 me-4 text-lg">UpdateProfile</p>
                 </div>
                 <div
                     className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300 dark:before:border-neutral-500 dark:after:border-neutral-500">
@@ -55,7 +61,7 @@ const UpdateProfile = () => {
 
                     <label
                         className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-                        Name
+                          {user.displayName}
                     </label>
                 </div>
 
@@ -71,7 +77,7 @@ const UpdateProfile = () => {
 
                     <label
                         className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-                        email
+                        {user.email}
                     </label>
                 </div>
 
@@ -87,24 +93,18 @@ const UpdateProfile = () => {
 
                     <label
                         className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
-                        Photo Url
+                         {user.photoURL}
                     </label>
                 </div>
 
                 <button
                     type="submit"
-                    className="inline-block w-full rounded bg-primary px-7 pb-2 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
+                    className="inline-block w-full rounded bg-[#4793AF] px-7 pb-2 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 dark:shadow-black/30 dark:hover:shadow-dark-strong dark:focus:shadow-dark-strong dark:active:shadow-dark-strong"
                     data-twe-ripple-init
                     data-twe-ripple-color="light">
-                    Login
+                     Save
                 </button>
-                <div className="text-center lg:text-left">
-                    <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
-                        Already have an account
-                        {/* <Link to='/login' className="text-danger p-4 transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700">
-                            Login here</Link> */}
-                    </p>
-                </div>
+               
             </form>
         </div>
     )

@@ -13,12 +13,16 @@ const Navbar = () => {
         <NavLink to='/' className=' mr-3 text-sm font-montserrat '><a>Home</a></NavLink>
         <NavLink to='/updateProfile' className='  mr-3 text-sm font-montserrat'><a>UpdateProfile</a></NavLink>
         <NavLink to='/travel' className='  mr-3 text-sm font-montserrat'><a>TravelTips</a></NavLink>
+        {
+            
+            user && <NavLink to='/userProfile' className='  mr-3 text-sm font-montserrat'><a> UserProfile</a></NavLink>
+        }
     </>
 
     return (
         <div className="navbar bg-base-100 ">
             <div className="navbar-start">
-                <div className="dropdown">
+                <div className="dropdown z-10">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
@@ -27,10 +31,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='flex items-center'>
-                    <div className='w-20'>
+                    <div className=' w-10 md:w-16  -m-2  lg:w-20 '>
                         <img src="https://i.ibb.co/tYShWGR/depositphotos-183079166-stock-illustration-hotel-tourism-holiday-summer-beach.webp" alt="" />
                     </div>
-                    <a className="text-3xl font-bold font-montserrat flex items-center"> Relaxa<span className=' text-[#4793AF]'>tion</span></a>
+                    <a className="text-xl md:text-2xl pl-2  lg:text-3xl font-bold font-montserrat flex items-center"> Relaxa<span className=' text-[#4793AF]'>tion</span></a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -39,15 +43,14 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {user ? <><a className="flex gap-1 items-center font-bold text-lg font-montserrat  btn btn-outline btn-info " onClick={() => userSignOut()}> <FiLogOut className='text-xl' /> Logout</a>
+                {user ? <><a className="flex gap-1 items-center font-bold  text-sm lg:text-lg font-montserrat  btn btn-outline btn-info " onClick={() => userSignOut()}> <FiLogOut className='text-xl ' /> Logout</a>
                     <div className="">
                         <div className="group relative cursor-pointer py-2">
 
                             <div className="flex items-center justify-between space-x-5 bg-white px-4">
                                 <a className="menu-hover  " onClick="">
                                     <div className="avatar">
-                                        <div className="w-14 rounded-full">
-                                          
+                                        <div className="w-12  rounded-full">
                                             <img src={user.photoURL || photo} />
                                         </div>
                                     </div>
@@ -61,7 +64,7 @@ const Navbar = () => {
 
                             </div>
                         </div>
-                    </div></> : <Link to='./login'><button className='flex gap-1 items-center font-bold text-lg font-montserrat  btn btn-outline btn-info '><CiLogin className='text-xl' /> Login</button></Link>}
+                    </div></> : <Link to='./login'><button className='flex gap-1 items-center font-bold text-base lg:text-lg font-montserrat  btn btn-outline btn-info '><CiLogin className='text-xl' /> Login</button></Link>}
             </div>
         </div>
     )
@@ -69,4 +72,3 @@ const Navbar = () => {
 
 export default Navbar
 
-{/* <a href="https://imgbb.com/"><img src="https://i.ibb.co/tYShWGR/depositphotos-183079166-stock-illustration-hotel-tourism-holiday-summer-beach.webp"  */ }

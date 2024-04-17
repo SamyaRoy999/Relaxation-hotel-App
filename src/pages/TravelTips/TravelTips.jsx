@@ -11,7 +11,7 @@ const TravelTips = () => {
             <div className=' relative '>
                 <div className="absolute inset-0 bg-[#091926] opacity-50"></div>
                 <div className=' absolute bottom-[25%] text-white'>
-                    <h3 className=' text-6xl font-montserrat mx-16 font-normal  container mb-12'>Luxury Travel Hacks:  <br /> Enhancing Your Travel <br /> Experience</h3>
+                    <h3 className=' text-3xl md:text-5xl lg:text-6xl font-montserrat mx-4 lg:mx-16 font-normal  container mb-12'>Luxury Travel Hacks:  <br /> Enhancing Your Travel <br /> Experience</h3>
 
                 </div>
                 <div className=''>
@@ -19,7 +19,7 @@ const TravelTips = () => {
                 </div>
             </div>
 
-            <div className=" mt-2 mx-32">
+            <div className=" mt-2 mx-12 md:mx-24  lg:mx-32">
 
                 <h2 className=" text-5xl py-3 lg:py-7 font-bold"></h2>
                 <p className="text-[#606060] text-lg pb-3 lg:pb-6 "></p>

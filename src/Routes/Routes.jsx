@@ -8,6 +8,7 @@ import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import PrivetedRoute from "../Priveted/PrivetedRoute";
 import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import TravelTips from "../pages/TravelTips/TravelTips";
+import UserProfile from "../pages/UserProfile/UserProfile";
 
 export const router = createBrowserRouter([
   {
@@ -19,13 +20,14 @@ export const router = createBrowserRouter([
         path: '/',
         element: <Home />
       },
-      {
-        path: '/login',
-        element: <Login />
-      },
+   
       {
         path: '/updateProfile',
         element: <PrivetedRoute> <UpdateProfile /> </PrivetedRoute>
+      },
+      {
+        path: '/userProfile',
+        element: <UserProfile/>
       },
       {
         path: '/login',

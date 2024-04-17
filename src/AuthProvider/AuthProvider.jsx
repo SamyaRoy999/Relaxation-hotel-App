@@ -6,7 +6,7 @@ import auth from '../firebase/FirebaseConfig';
 import { GoogleAuthProvider } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth";
 
-import { toast } from 'react-toastify';
+
 
 export const AuthContext = createContext(null)
 

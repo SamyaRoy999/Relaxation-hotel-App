@@ -27,13 +27,13 @@ const EstateDetails = () => {
                 <title> Relaxation | LUXURY-RETREATS-DETAILS</title>
             </Helmet>
             {datials && (
-                //  const {id, image, estate_title, segment_name, description, price, status, area, location, facilities} = estateData
+              
                 <div
                     className="w-full container font-poppins  mx-4  sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto  bg-white shadow-xl rounded-lg text-gray-900">
-                    <div className="rounded-t-lg  h-[400px] overflow-hidden">
+                    <div className="rounded-t-lg md:h-[400px]  lg:h-[400px] overflow-hidden">
                         <img className="object-cover object-top w-full" src={datials.image} alt='Mountain' />
                     </div>
-                    <div className=" mt-2 mx-32">
+                    <div className=" mt-2 md:mx-24 lg:mx-32">
                         <div className=" py-8">
                             <span className=" px-6  text-white bg-gray-900 p-2 rounded-lg ">{datials.segment_name}</span>
                         </div>

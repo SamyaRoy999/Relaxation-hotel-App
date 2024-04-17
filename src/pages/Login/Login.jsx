@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom"
 
 import { useForm } from "react-hook-form"
-import { useContext, useEffect } from "react"
+import { useContext,  } from "react"
 import { AuthContext } from "../../AuthProvider/AuthProvider"
 
 
@@ -26,10 +26,12 @@ const Login = () => {
         const { email, password } = data
         singInUser(email, password)
             .then((user) => {
-                console.log(user);
-                toast.success('Login Successful!')
+                
                 if (user.user) {
-                    navigate(from)
+                    toast.success('Login Successful!')
+                    setTimeout(() => {    
+                        navigate(from)
+                    }, 2000);
                 }
 
             })
@@ -44,7 +46,10 @@ const Login = () => {
         socialLogin()
             .then(result => {
                 if (result.user) {
-                    navigate(from)
+                    toast.success('Login Successful!')
+                    setTimeout(() => {
+                        navigate(from)
+                    }, 2000);
                 }
             })
 
@@ -52,24 +57,24 @@ const Login = () => {
 
     }
     return (
-        <section className="w-full h-[90vh]">
+        <section className="w-full lg:h-screen">
             <Helmet>
                 <title> Relaxation | LOGIN</title>
             </Helmet>
-            <div className="h-full">
+            <div className="lg:h-screen">
                 <ToastContainer />
                 <div
-                    className="flex h-full  flex-wrap justify-center flex-1">
+                    className="flex  flex-wrap justify-center flex-1">
                     <div
                         className="shrink-1 mb-12 relative  grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
                         <div className="absolute inset-0 bg-black opacity-50"></div>
-                        <div className=" absolute top-[50%] text-center right-[20%] text-white ">
+                        <div className=" absolute top-[40%] text-center right-[15%] md:right-[20%] lg:right-[20%] text-white ">
                             <h3 className=" text-6xl font-bold font-poppins mb-5">Welcome</h3>
                             <p className="text-xl "> to our Luxe Resort Hub! Dive into <br /> opulent escapes.</p>
                         </div>
                         <img
                             src="https://i.ibb.co/hDVHVJv/luxury-3115234-1280.jpg"
-                            className="w-full h-[90vh]"
+                            className="w-full h-96 lg:h-[87vh]"
                             alt="Sample image" />
                     </div>
 
@@ -155,7 +160,7 @@ const Login = () => {
                             <div className="text-center ">
                                 <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
                                     Do not have an account
-                                    <Link to='/register' className="text-danger p-2 transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700">
+                                    <Link to='/register' className="text-[#4793AF] text-danger p-2 transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700">
                                         Register</Link>
                                 </p>
                             </div>

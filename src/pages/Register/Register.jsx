@@ -12,10 +12,11 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-    const { createUser, setName, setPhoto } = useContext(AuthContext)
+    const { createUser, setName, setPhoto, updateUserProfile } = useContext(AuthContext)
 
     const [passwordIcon, setPasswordIcon] = useState(false)
     //navigation system
+    
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state || "/"
@@ -36,15 +37,16 @@ const Register = () => {
         }
 
         createUser(email, password)
+
             .then((userCredential) => {
-
-                const user = userCredential.user;
-                console.log(user);
-                toast.success("Registration Successful!")
-
-                if (userCredential.user) {
-                    navigate(from)
-                }
+                updateUserProfile(name, photoUrl).then(() => {
+                    if (userCredential.user) {
+                        toast.success("Registration Successful!")
+                        setTimeout(() => {
+                            navigate(from)
+                        }, 2000);
+                    }
+                })
             })
             .catch((error) => {
 
@@ -56,24 +58,24 @@ const Register = () => {
     }
 
     return (
-        <section className="w-full h-[90vh] ">
+        <section className="w-full lg:h-screen ">
             <Helmet>
                 <title> Relaxation | REGISTER</title>
             </Helmet>
-            <div className="h-full">
+            <div className="lg:h-screen">
                 <ToastContainer />
                 <div
-                    className="flex h-full flex-wrap  justify-center flex-1">
+                    className="flex lg:h-screen flex-wrap  justify-center flex-1">
                     <div
                         className="shrink-1 mb-12 relative  grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
                         <div className="absolute inset-0 bg-black opacity-50"></div>
-                        <div className=" absolute top-[50%] text-center right-[20%] text-white ">
+                        <div className=" absolute top-[40%] text-center right-[15%] md:right-[20%] lg:right-[20%] text-white">
                             <h3 className=" text-6xl font-bold font-poppins mb-5">Join our </h3>
                             <p className="text-xl ">Luxe Community! Register to unlock  <br /> exclusive resort deals.</p>
                         </div>
                         <img
                             src="https://i.ibb.co/hDVHVJv/luxury-3115234-1280.jpg"
-                            className="w-full h-[90vh]"
+                            className="w-full h-96  lg:h-[90vh]"
                             alt="Sample image" />
                     </div>
 
@@ -143,14 +145,14 @@ const Register = () => {
                             <div className=" mb-4 relative   h-11 w-full min-w-[200px]">
                                 <input placeholder="Password"
 
-                                    type= {passwordIcon?"text": "password"}
+                                    type={passwordIcon ? "text" : "password"}
                                     name="password"
                                     className="peer h-full  w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-gray-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50 placeholder:opacity-0 focus:placeholder:opacity-100"
                                     {...register("password", { required: true })}
                                 />
                                 {errors.password && <span className=" text-red-400">This field is required</span>}
-                                <div onClick={()=> setPasswordIcon(!passwordIcon)} className=" absolute right-0 top-4">
-                                    {passwordIcon ?<FaEye />: <FaEyeSlash/>}
+                                <div onClick={() => setPasswordIcon(!passwordIcon)} className=" absolute right-0 top-4">
+                                    {passwordIcon ? <FaEye /> : <FaEyeSlash />}
                                 </div>
                                 <label
                                     className="after:content[''] pointer-events-none absolute left-0  -top-1.5 flex h-full w-full select-none !overflow-visible truncate text-[11px] font-normal leading-tight text-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-gray-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-gray-900 peer-focus:after:scale-x-100 peer-focus:after:border-gray-900 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">

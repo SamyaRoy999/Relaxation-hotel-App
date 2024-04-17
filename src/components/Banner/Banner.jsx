@@ -18,15 +18,15 @@ const Banner = () => {
                 rewind={true}
                 navigation={true}
                 modules={[Navigation]}
-                className="mySwiper text-center  "
+                className="mySwiper text-center z-0 "
             >
 
 
-                <SwiperSlide className=' relative '>
+                <SwiperSlide className=' relative  '>
                 <div className="absolute inset-0 bg-[#091926] opacity-50"></div>
                     <div className=' absolute bottom-[25%] text-white'>
-                        <h3 className=' text-6xl font-montserrat font-normal mx-auto container mb-12'>Discover Luxurious Escapes</h3>
-                        <p className="  mx-20 mb-8 text-base font-normal font-poppins">Embark on a journey to extraordinary destinations where luxury meets unparalleled hospitality. Immerse yourself in opulent accommodations, breathtaking landscapes, and unforgettable experiences that redefine indulgence.</p>
+                        <h3 className='text-4xl md:text-5xl lg:text-6xl font-montserrat font-normal mx-auto container mb-6 lg:mb-12'>Discover Luxurious Escapes</h3>
+                        <p className="  mx-10 md:mx-16 lg:mx-20 mb-8 text-base font-normal font-poppins">Embark on a journey to extraordinary destinations where luxury meets unparalleled hospitality. Immerse yourself in opulent accommodations, breathtaking landscapes, and unforgettable experiences that redefine indulgence.</p>
                        
                         <div className="flex gap-4 justify-center">
 
@@ -49,8 +49,8 @@ const Banner = () => {
                 <SwiperSlide className=' relative '>
                 <div className="absolute inset-0 bg-[#091926] opacity-50"></div>
                     <div className=' absolute bottom-[25%] text-white'>
-                        <h3 className=' text-6xl font-montserrat font-normal mx-auto container mb-12'>Experience Timeless Elegance</h3>
-                        <p className="  mx-20 mb-8 text-base font-normal font-poppins">Embark on a journey to extraordinary destinations where luxury meets unparalleled hospitality. Immerse yourself in opulent accommodations, breathtaking landscapes, and unforgettable experiences that redefine indulgence.</p>
+                        <h3 className='text-4xl md:text-5xl lg:text-6xl font-montserrat font-normal mx-auto container mb-6 lg:mb-12'>Experience Timeless Elegance</h3>
+                        <p className=" mx-10 md:mx-16 lg:mx-20 mb-8 text-base font-normal font-poppins">Embark on a journey to extraordinary destinations where luxury meets unparalleled hospitality. Immerse yourself in opulent accommodations, breathtaking landscapes, and unforgettable experiences that redefine indulgence.</p>
                        
                         <div className="flex gap-4 justify-center">
 
@@ -73,8 +73,8 @@ const Banner = () => {
                 <SwiperSlide className=' relative '>
                 <div className="absolute inset-0 bg-[#091926] opacity-50"></div>
                     <div className=' absolute bottom-[25%] text-white'>
-                        <h3 className=' text-6xl font-montserrat font-normal mx-auto container mb-12'>Unwind in Ultimate Comfort</h3>
-                        <p className="  mx-20 mb-8 text-base font-normal font-poppins">Escape to secluded retreats where relaxation and rejuvenation await. Immerse yourself in the tranquility of lush landscapes, rejuvenating spa treatments, and unparalleled service that promises an unforgettable getaway.</p>
+                        <h3 className=' text-4xl md:text-5xl lg:text-6xl font-montserrat font-normal mx-auto container mb-6 lg:mb-12'>Unwind in Ultimate Comfort</h3>
+                        <p className="  mx-10 md:mx-16 lg:mx-20 mb-8 text-base font-normal font-poppins">Escape to secluded retreats where relaxation and rejuvenation await. Immerse yourself in the tranquility of lush landscapes, rejuvenating spa treatments, and unparalleled service that promises an unforgettable getaway.</p>
                        
                         <div className="flex gap-4 justify-center">
 

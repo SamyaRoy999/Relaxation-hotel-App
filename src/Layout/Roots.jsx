@@ -5,11 +5,11 @@ import Footer from "../components/Footer/Footer"
 const Roots = () => {
     return (
         <div className=" font-latothin">
-            <div className="mx-auto container">
+            <div className="mx-auto ">
                 <Navbar />
             </div>
             <Outlet></Outlet>
-            <div>
+            <div className=" mt-5 mx-auto text-center lg:text-left">
                 <Footer/>
             </div>
         </div>
