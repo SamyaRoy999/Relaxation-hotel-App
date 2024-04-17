@@ -10,7 +10,7 @@ const Roots = () => {
         AOS.init({ duration: 1000 });
     }, [])
     return (
-        <div className=" font-latothin">
+        <div className=" font-latothin  min-h-[100vh] overflow-hidden">
             <div className="mx-auto ">
                 <Navbar />
             </div>
